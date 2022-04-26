@@ -1,6 +1,6 @@
 # job_genie
 
-A new Flutter project which provides the courses and internships to students
+A new Flutter project!!!! 
 
 ## Getting Started
 
