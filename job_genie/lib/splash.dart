@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
         body: Center(
       child: Container(
         child: Text(
-          'JOB',
+          'JOB GENIE',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ),
