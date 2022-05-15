@@ -31,19 +31,23 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.cyanAccent,
+        // backgroundColor: Colors.cyanAccent,
         body: Center(
-          child: Column(
-            children: [
-              Lottie.asset('assets/logo.json'),
-              Container(
-                child: Text(
-                  'JOB GENIE',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Lottie.asset('assets/logo.json'),
+          Container(
+            child: Text(
+              'JOB GENIE',
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 8.0),
+            ),
           ),
-        ));
+        ],
+      ),
+    ));
   }
 }
