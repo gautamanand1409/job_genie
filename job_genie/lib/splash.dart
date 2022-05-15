@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'home.dart';
 import 'main.dart';
@@ -32,11 +33,16 @@ class _SplashState extends State<Splash> {
     return Scaffold(
         backgroundColor: Colors.cyanAccent,
         body: Center(
-          child: Container(
-            child: Text(
-              'JOB GENIE',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
+          child: Column(
+            children: [
+              Lottie.asset('assets/logo.json'),
+              Container(
+                child: Text(
+                  'JOB GENIE',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
           ),
         ));
   }
