@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_genie/splash.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(const MyApp());
