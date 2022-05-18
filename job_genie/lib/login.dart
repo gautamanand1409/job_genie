@@ -21,28 +21,56 @@ class _MyloginState extends State<Mylogin> {
             Container(
               padding: EdgeInsets.only(
                 left: 35,
-                top: 100,
+                top: 120,
               ),
               child: Text(
                 'Welcome\nStudent',
                 style: TextStyle(color: Colors.blue, fontSize: 33),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.5,
-                  left: 33,
-                  right: 33),
-              child: Column(
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                        hintText: 'abc@gmail.com',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  ),
-                  TextField(),
-                ],
+            SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.4,
+                    left: 33,
+                    right: 33),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          hintText: 'abc@gmail.com',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          hintText: 'Password',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.normal),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
