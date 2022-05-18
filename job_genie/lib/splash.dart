@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'home.dart';
+import 'login.dart';
 import 'main.dart';
 
 class Splash extends StatefulWidget {
@@ -15,17 +15,13 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    // _navigatetohome();
+    _navigatetologin();
   }
 
-  _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+  _navigatetologin() async {
+    await Future.delayed(Duration(milliseconds: 5000), () {});
     Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (context) => MyHomePage(
-                  title: 'WELCOME STUDENT',
-                )));
+        context, MaterialPageRoute(builder: (context) => Mylogin()));
   }
 
   @override
