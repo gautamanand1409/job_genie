@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyLogin extends StatefulWidget {
@@ -10,6 +11,7 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
+    String emailAddress = '', password = '';
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -39,6 +41,9 @@ class _MyLoginState extends State<MyLogin> {
                       child: Column(
                         children: [
                           TextField(
+                            onChanged: (value) {
+                              emailAddress = value;
+                            },
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
@@ -52,6 +57,9 @@ class _MyLoginState extends State<MyLogin> {
                             height: 30,
                           ),
                           TextField(
+                            onChanged: (value) {
+                              password = value;
+                            },
                             style: TextStyle(),
                             obscureText: true,
                             decoration: InputDecoration(
@@ -78,7 +86,24 @@ class _MyLoginState extends State<MyLogin> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      try {
+                                        final credential = await FirebaseAuth
+                                            .instance
+                                            .signInWithEmailAndPassword(
+                                                email: emailAddress,
+                                                password: password);
+                                        Navigator.pushNamed(context, 'home');
+                                      } on FirebaseAuthException catch (e) {
+                                        if (e.code == 'user-not-found') {
+                                          print(
+                                              'No user found for that email.');
+                                        } else if (e.code == 'wrong-password') {
+                                          print(
+                                              'Wrong password provided for that user.');
+                                        }
+                                      }
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),

@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:job_genie/home.dart';
 import 'package:job_genie/login.dart';
 import 'package:job_genie/register.dart';
 import 'package:job_genie/splash.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'register': (context) => MyRegister(),
         'login': (context) => MyLogin(),
+        'home': (context) => MyHome(),
       },
     );
   }
