@@ -3,6 +3,7 @@ import 'package:job_genie/data/CardData.dart';
 import 'package:job_genie/model/CardModel.dart';
 import 'package:job_genie/screens/navigation_drawer.dart';
 import 'package:job_genie/screens/testpage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyHome extends StatefulWidget {
   @override
@@ -45,11 +46,16 @@ class _MyHomeState extends State<MyHome> {
               itemCount: cardData.length,
               itemBuilder: (BuildContext context, index) {
                 return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const TestPage()),
-                    );
+                  onTap: () async {
+                    final url = Uri.parse(cardData[index].videourl);
+                    await launchUrl(url,
+                        mode: LaunchMode.inAppWebView,
+                        webViewConfiguration:
+                            const WebViewConfiguration(enableJavaScript: true));
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => const TestPage()),
+                    // );
                   },
                   // You can add the route to the next page using this onTap
                   child: Container(
