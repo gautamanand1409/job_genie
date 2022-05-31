@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:job_genie/home.dart';
-import 'package:job_genie/login.dart';
-import 'package:job_genie/register.dart';
-import 'package:job_genie/splash.dart';
+import 'package:job_genie/screens/home.dart';
+import 'package:job_genie/screens/login.dart';
+import 'package:job_genie/screens/register.dart';
+import 'package:job_genie/screens/splash.dart';
 import 'package:lottie/lottie.dart';
 
 void main() async {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: MyHome(),
       routes: {
         'register': (context) => MyRegister(),
         'login': (context) => MyLogin(),

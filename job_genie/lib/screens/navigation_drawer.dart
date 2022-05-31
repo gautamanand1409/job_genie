@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:job_genie/drawer_item.dart';
-import 'package:job_genie/people.dart';
+import 'package:job_genie/screens/drawer_item.dart';
+import 'package:job_genie/screens/people.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key? key}) : super(key: key);
