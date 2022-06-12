@@ -73,7 +73,8 @@ class NavigationDrawer extends StatelessWidget {
               DrawerItem(
                   name: 'Log out',
                   icon: Icons.logout,
-                  onPressed: () => onItemPressed(context, index: 5)),
+                  onPressed: () =>
+                      Navigator.pushReplacementNamed(context, 'login')),
             ],
           ),
         ),

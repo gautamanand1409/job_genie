@@ -7,7 +7,7 @@ class People extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('People'),
+        title: const Text('Courses'),
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
