@@ -5,6 +5,7 @@ A new Flutter project!!!!
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+This application is all about the getting free courses from the youtube of the best tutor of the youtube.
 
 A few resources to get you started if this is your first Flutter project:
 
